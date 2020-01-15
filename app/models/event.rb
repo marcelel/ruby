@@ -1,15 +1,6 @@
 class Event < ApplicationRecord
-    # validates :artist, 
-    # presenence => true
-
-    # validates :price_low, 
-    # presenence => true,
-    # greater_than:0
-
-    # validates :price_high, 
-    # presenence => true
-    # greater_than:0
-
-    # validates :date, 
-    # presenence => true
+    validates :artist, presence: true
+    validates :price_low, presence: true, numericality: true
+    validates :price_high, presence: true, numericality: true
+    validates :event_date, presence: true
 end
