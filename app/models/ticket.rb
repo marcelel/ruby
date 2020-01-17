@@ -4,4 +4,6 @@ class Ticket < ApplicationRecord
     validates :price, :presence => true
     validates :address, :presence => true
     validates :seat_id_seq, :presence => true
+    
+    belongs_to :event 
 end

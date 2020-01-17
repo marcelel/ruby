@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
+  before_action :check_logged_in, :only => [:new, :create]
   before_action :set_event, only: [:show]
-
+  
   def index
     @events = Event.all
   end
@@ -25,13 +26,14 @@ class EventsController < ApplicationController
   end
   
   private
-    # Use callbacks to share common setup or constraints between actions.
+    
+    def check_logged_in
+      authenticate_or_request_with_http_basic("Ads") do |username, password|
+        username == "marcel" && password == "marcel"
+      end
+    end
+    
     def set_event
       @event = Event.find(params[:id])
     end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    # def event_params
-    #   params.require(:event).permit(:artist, :description, :price_low, :price_high, :date)
-    # end
 end
