@@ -28,5 +28,5 @@
 
 <%= link_to 'Back', events_path %>
 
-<%= render "tickets/new_ticket", ticket: Ticket.new( :event_id=>@event.id) %>
-<%= render "tickets/tickets_list", tickets: @event.tickets %>
+<%= render "new_ticket", ticket: Ticket.new( :event_id=>@event.id) %>
+<%= render "tickets_list", tickets: @event.tickets %>
