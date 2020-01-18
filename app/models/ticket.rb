@@ -7,6 +7,7 @@ class Ticket < ApplicationRecord
     validate :price_in_range
     
     belongs_to :event
+    belongs_to :user
     
     def price_in_range
         print("price validator")
