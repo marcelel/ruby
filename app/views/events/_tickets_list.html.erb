@@ -24,9 +24,9 @@
         <td><%= ticket.price %></td>
         <td><%= ticket.email_address %></td>
         <td><%= ticket.phone %></td>
-        <td><%= link_to 'Show', ticket %></td>
-        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><button><%= link_to 'Show', ticket %></button></td>
+        <td><button><%= link_to 'Edit', edit_ticket_path(ticket) %></button></td>
+        <td><button><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></button></td>
       </tr>
     <% end %>
   </tbody>

@@ -11,7 +11,7 @@ class Ticket < ApplicationRecord
     def price_in_range
         print("price validator")
         event = Event.find(event_id)
-        if (price < event.price_low || price > event.price_high)
+        if price && (price < event.price_low || price > event.price_high)
             errors.add('Cena', 'nie moze byc nizsza od minimalnej lub wieksza od maksymalnej')
         end
     end
